@@ -1410,7 +1410,7 @@ GameObject:
   - component: {fileID: 1354168066}
   - component: {fileID: 1354168065}
   m_Layer: 7
-  m_Name: Cube
+  m_Name: key
   m_TagString: KeyStone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
