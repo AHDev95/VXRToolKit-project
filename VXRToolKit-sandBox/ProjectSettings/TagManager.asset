@@ -12,6 +12,7 @@ TagManager:
   - orangeCap
   - purpleCap
   - yellowCap
+  - KeyStone
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Teleport
   - Grab
   - RemoteGrab
-  - 
+  - Player
   - 
   - 
   - 

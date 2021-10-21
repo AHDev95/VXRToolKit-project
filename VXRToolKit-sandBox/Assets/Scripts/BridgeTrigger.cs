@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class BridgeTrigger : MonoBehaviour
 {
-    [SerializeField] GameObject bridge;
-    
-    private void OnTriggerStay(Collider other)
+    [SerializeField] Rigidbody bridge;
+
+
+    private void OnTriggerEnter(Collider other)
     {
-        bridge.GetComponent<Rigidbody.>();
+        if (other.gameObject.CompareTag("KeyStone"))
+        { 
+            bridge.isKinematic = false;
+
+        }
+
+        
     }
 }
