@@ -33,6 +33,7 @@ public class ShootHook : MonoBehaviour
 
     private void HookShot(ActivateEventArgs arg0)
     {
+        //this needs to be a coroutine to stop the incremental crawl 
         hook.transform.Translate(Vector3.back * Time.deltaTime * hookTravelSpeed);
         currentDistence = Vector3.Distance(transform.position, hook.transform.position);
 
