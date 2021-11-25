@@ -17,7 +17,7 @@ public class BubbleShoot : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI ammoText;
 
-    [SerializeField]//realod action
+    [SerializeField]//reload action
     InputActionReference reloadAction;
     XRBaseInteractor interactor;
     ActionBasedController actionCon;

@@ -924,6 +924,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "pullTrigger",
+            "id": "80e5c365-75dd-4b81-80db-c09f28879aab",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "e66f0c19-b699-4ce0-83dd-7c86bfe70d31",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9be832a1-5ce8-4bd9-a8ab-bac895e9f25f",
+                    "path": "<XRController>/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
