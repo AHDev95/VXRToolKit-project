@@ -14,6 +14,7 @@ TagManager:
   - yellowCap
   - KeyStone
   - Ball
+  - Hookable
   layers:
   - Default
   - TransparentFX
