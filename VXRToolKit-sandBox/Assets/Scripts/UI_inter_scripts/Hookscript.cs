@@ -20,23 +20,24 @@ public class Hookscript : MonoBehaviour
 
 
           
-           Debug.Log("Hook transform done");
            
+           
+            yield return null;
         }
 
         
 
        
-
+          
 
         transform.position = lockpoint.transform.position;
         
-        
-         yield break;
+        Debug.Log("Hook transform done");
+         
 
     }
 
-        void OnTriggerEnter(Collider other) //when another collider passes through
+     /*   void OnTriggerEnter(Collider other) //when another collider passes through
     {
         if (other.gameObject.CompareTag("Hookable"))//check for keystone tag
         {
@@ -45,7 +46,7 @@ public class Hookscript : MonoBehaviour
         }
 
 
-    }
+    }*/
 
 
 
