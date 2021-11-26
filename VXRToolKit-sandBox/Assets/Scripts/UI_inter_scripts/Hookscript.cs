@@ -16,7 +16,7 @@ public class Hookscript : MonoBehaviour
     bool resetHook = true;
     public IEnumerator Fire()
     {
-        resetHook = false;
+       // resetHook = false;
         while (Vector3.Distance(transform.position, MaxRange.position) > 0.05f)
         {
             transform.position = Vector3.Lerp(transform.position, MaxRange.position, smoothing * Time.deltaTime);
@@ -26,11 +26,10 @@ public class Hookscript : MonoBehaviour
             {
                 
                 yield return new WaitUntil(Reset);
+                Debug.Log("stoped fire coroutine");
+                yield break;
                 
-                //transform.position = lockpoint.transform.position;
-                //resetHook = true;
-               Debug.Log("stoped coroutine");
-               // StopCoroutine("Fire");
+
                 /*if hit = true wait until "xr rig has moved" then return hook
                  to lock point and yeild break*/
             }
@@ -39,16 +38,8 @@ public class Hookscript : MonoBehaviour
             yield return null;
         }
 
-
-
-
-
-
-
         transform.position = lockpoint.transform.position;
         Debug.Log("Hook transform done");
-         
-
     }
     
     
@@ -67,14 +58,15 @@ public class Hookscript : MonoBehaviour
     {
 
         if (transform.position != lockpoint.transform.position)
-        {
+        {   
+            yield return new WaitForSeconds(2);
             transform.position = lockpoint.transform.position;
             resetHook = true;
-            StopCoroutine("Fire");
             Hit = false;
+            // StopCoroutine("Fire");
         }
         Debug.Log("Hit hookable wall");
-        yield return null;
+       
     }
 
     bool Reset()
