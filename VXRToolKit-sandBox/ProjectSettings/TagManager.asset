@@ -15,6 +15,7 @@ TagManager:
   - KeyStone
   - Ball
   - Hookable
+  - NotHookable
   layers:
   - Default
   - TransparentFX
@@ -27,8 +28,8 @@ TagManager:
   - RemoteGrab
   - Player
   - item
-  - 
-  - 
+  - nonGrapple
+  - Grapple
   - 
   - 
   - 

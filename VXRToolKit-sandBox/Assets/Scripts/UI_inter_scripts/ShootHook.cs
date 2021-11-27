@@ -10,6 +10,8 @@ public class ShootHook : MonoBehaviour
     private XRGrabInteractable grabInter;
     [SerializeField]
    GameObject hook;
+    bool cooldown = true;
+    WaitForSeconds cooling = new WaitForSeconds(2);
    // [SerializeField]
    // GameObject lockpoint;
     //Hookscript hookscript;
@@ -37,31 +39,31 @@ public class ShootHook : MonoBehaviour
 
    private void HookShot(ActivateEventArgs arg0)
     {
+        if (cooldown)
+        {
+            hook.GetComponent<Hookscript>().fire();
+            cooldown = false;
+            StartCoroutine(CoolDownTimer());
+        }
        
-        StartCoroutine(hook.GetComponent<Hookscript>().Fire());
-/*
-         //this needs to be a coroutine to stop the incremental crawl 
-        hook.transform.Translate(Vector3.back * Time.deltaTime * hookTravelSpeed);
-        currentDistence = Vector3.Distance(transform.position, hook.transform.position);
-        if (currentDistence >= maxDistance)
-        { RertunHook(); }
-       // Debug.Log("hook fired");*/
+       
+        //StartCoroutine(hook.GetComponent<Hookscript>().Fire());
+        /*
+                 //this needs to be a coroutine to stop the incremental crawl 
+                hook.transform.Translate(Vector3.back * Time.deltaTime * hookTravelSpeed);
+                currentDistence = Vector3.Distance(transform.position, hook.transform.position);
+                if (currentDistence >= maxDistance)
+                { RertunHook(); }
+               // Debug.Log("hook fired");*/
 
     }
 
-   /*IEnumerator Fire (Transform hook)
+    IEnumerator CoolDownTimer()
     {
-
-       hook.transform.Translate(Vector3.back * hookTravelSpeed * Time.deltaTime ); 
-        currentDistence = Vector3.Distance(transform.position, hook.transform.position);
-
-        if (currentDistence >= maxDistance)
-        {
-            RertunHook();
-        } 
-
-        yield break;
-    }*/
+        yield return cooling;
+        Debug.Log("cooling");
+        cooldown = true;
+    }
 
    /* private void RertunHook()
     {
