@@ -21,6 +21,8 @@ public class Hookscript : MonoBehaviour
     float speed;
     [SerializeField]
     GameObject gun;
+    [SerializeField]
+    GameObject XRRig;
    // WaitForSeconds fireTime = new WaitForSeconds(3);
     //[SerializeField] int hangTime = 70;
     public void fire()
@@ -91,7 +93,9 @@ public class Hookscript : MonoBehaviour
     public IEnumerator fireTimer()
     {   //Debug.Log("start reset");
         yield return delay;
-        
+
+        StartCoroutine(XRRig.GetComponent<GrappleMoveScript>().GrappleLoco());
+
         if (transform.position != lockpoint.transform.position)
         {   
             
